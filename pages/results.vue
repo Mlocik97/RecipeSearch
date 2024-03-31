@@ -1,11 +1,11 @@
 <script setup>
 	/**
-	 * @type {{
+	 * @satisfies {{
 	 * 		text: string,
 	 * 		link: string
 	 * }[]}
 	 */
-	const results = [];
+	const results = await $fetch('/api/search_results').then((r) => r.json());
 </script>
 
 <template>
