@@ -14,6 +14,7 @@
 </script>
 
 <template>
+	<header></header>
 	<nav>
 		<ul v-for="link in links" :key="link.href">
 			<li>
@@ -26,6 +27,7 @@
 			<NuxtPage />
 		</NuxtLayout>
 	</main>
+	<footer></footer>
 </template>
 
 <style>
