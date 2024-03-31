@@ -21,3 +21,7 @@
 		</form>
 	</div>
 </template>
+
+<style>
+@import url('~/assets/css/search.css');
+</style>

@@ -8,7 +8,7 @@
 	 * 		category: string
 	 * }[]}
 	 */
-	const recipes = JSON.parse(route.query.data.recipes);
+	const recipes = JSON.parse(route.query.data);
 </script>
 
 <template>
@@ -24,5 +24,5 @@
 </template>
 
 <style>
-	@import url('./styles/results.css');
+	@import url('~/assets/css/results.css');
 </style>
