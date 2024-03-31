@@ -1,22 +1,23 @@
 <script setup>
-	defineProps({
-		results: []
-	})
+	const route = useRoute();
+
 	/**
-	 * @satisfies {{
+	 * @type {{
+	 * 		name: string
 	 * 		text: string,
-	 * 		link: string
+	 * 		category: string
 	 * }[]}
 	 */
-	const results = [];
+	const recipes = JSON.parse(route.query.data.recipes);
 </script>
 
 <template>
 	<div>
-		<ul v-for="result in results">
+		<ul v-for="recipe in recipes || []">
 			<li>
-				<span>{{ result.text }}</span>
-				<a :href="result.link">Details</a>
+				<h5>{{ recipe.name }}</h5>
+				<span>{{ recipe.category }}</span>
+				<span>{{ recipe.text }}</span>
 			</li>
 		</ul>
 	</div>
