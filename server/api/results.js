@@ -15,7 +15,7 @@ export default defineEventHandler(async ({ data }) => {
 	const recipe_doc = await recipes_model.find();
 
 	/**
-	 * @TODO fix type
+	 * @TODO fix type, it's POJO
 	 * 
 	 * @type {typeof recipe_doc}
 	 */
