@@ -1,11 +1,14 @@
 <script setup>
+	defineProps({
+		results: []
+	})
 	/**
 	 * @satisfies {{
 	 * 		text: string,
 	 * 		link: string
 	 * }[]}
 	 */
-	const results = await $fetch('/api/search_results').then((r) => r.json());
+	const results = [];
 </script>
 
 <template>
