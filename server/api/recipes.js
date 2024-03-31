@@ -1,16 +1,10 @@
 import { recipes_model } from '~/schemas/recipes';
 import Fuse from 'fuse.js';
 
-export default defineEventHandler(async ({ data }) => {
-	/** @TODO add external API */
-	const _recipes = await fetch('~TODO~', {
-		method: 'POST',
-		body: JSON.stringify({
-			query: data.search_prompt, // or something like that. Will see when I will find external API.
-		}),
-	}).then((r) => r.json());
+export default defineEventHandler(async (event) => {
+	const query = getQuery(event);
 
-	/** or we can just get those recipes from database */
+	console.log(query);
 
 	const recipe_doc = await recipes_model.find();
 
