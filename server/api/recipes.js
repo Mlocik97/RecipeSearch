@@ -1,10 +1,11 @@
 import { recipes_model } from '~/schemas/recipes';
 import Fuse from 'fuse.js';
+import './server/index.js';
 
 export default defineEventHandler(async (event) => {
-	const query = getQuery(event);
+	const data = getQuery(event);
 
-	console.log(query);
+	console.log('data', data);
 
 	const recipe_doc = await recipes_model.find();
 
@@ -21,7 +22,7 @@ export default defineEventHandler(async (event) => {
 		keys: ['name', 'category', 'text']
 	})
 
-	const recipes = fuse.search(data.search_prompt)
+	const recipes = fuse.search(data.prompt);
 
 	return {
 		recipes: recipes || [],

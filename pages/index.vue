@@ -1,7 +1,7 @@
 <script setup>
-	const prompt = ref('');
 	const router = useRouter();
-
+	const prompt = ref('')
+	
 	async function executeSearch() {
 		const data = await $fetch(`/api/recipes?prompt=${prompt.value}`).then((r) => r.json());
 		router.push({ // after we fetch data, we redirect to page that shows these data
@@ -13,12 +13,12 @@
 
 <template>
 	<div>
-		<form action="/api/recipes" method="post">
+		<!-- <form action="/api/recipes" method="post"> -->
 			<label for="prompt">
-				<input type="text" id="prompt" v-bind="prompt">
+				<input type="text" id="prompt" v-model.string="prompt">
 			</label>
 			<button type="submit" @click="executeSearch">Search</button>
-		</form>
+		<!-- </form> -->
 	</div>
 </template>
 
