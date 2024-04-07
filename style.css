@@ -17,7 +17,7 @@ body {
 	grid-template-rows: 3rem 1fr 2rem;
 	grid-column-gap: 0.5rem;
 	background-color: #1e1e1e;
-	color: #ccc;
+	color: #cccccc;
 }
 
 * {
