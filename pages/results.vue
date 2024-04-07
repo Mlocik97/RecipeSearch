@@ -8,7 +8,9 @@
 	 * 		category: string
 	 * }[]}
 	 */
-	const recipes = JSON.parse(route.query.data);
+	const recipes = JSON.parse(route.query.data).recipes.map(recipe => recipe.item);
+
+	console.log("recipes", recipes);
 </script>
 
 <template>

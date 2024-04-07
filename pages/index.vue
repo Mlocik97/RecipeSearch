@@ -3,7 +3,8 @@
 	const prompt = ref('')
 	
 	async function executeSearch() {
-		const data = await $fetch(`/api/recipes?prompt=${prompt.value}`).then((r) => r.json());
+		const data = await fetch(`/api/recipes?prompt=${prompt.value}`).then((r) => r.json());
+
 		router.push({ // after we fetch data, we redirect to page that shows these data
 			path: '/results',
 			query: { data: JSON.stringify(data) }
